@@ -293,6 +293,99 @@ html, body { overflow-x: clip; }
 @media (max-width: 760px) { .sw-pg .sw-mats { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .sw-pg .sw-products { grid-template-columns: 1fr; } }
 
+/* ===== 상담 신청: 폼 공통 ===== */
+.sw .sw-cs-form { display: grid; gap: 18px; }
+.sw .sw-cs-row { display: grid; gap: 18px; }
+.sw .sw-cs-row--2 { grid-template-columns: 1fr 1fr; }
+.sw .sw-cs-f { display: grid; gap: 6px; min-width: 0; font-size: var(--sw-fs-sm); }
+.sw .sw-cs-f > span { font-size: var(--sw-fs-xs); font-weight: 700; color: var(--sw-ink-2); letter-spacing: .02em; }
+.sw .sw-cs-f i { font-style: normal; color: var(--sw-brand-ink); }
+.sw .sw-cs-form input:not([type=checkbox]):not([type=radio]), .sw .sw-cs-form select, .sw .sw-cs-form textarea {
+  width: 100%; font: inherit; font-size: 16px; color: var(--sw-ink); background: var(--sw-paper);
+  border: 1px solid #c9cdd3; border-radius: 2px; padding: 11px 12px; min-height: 46px; }
+.sw .sw-cs-form textarea { resize: vertical; line-height: 1.6; }
+.sw .sw-cs-form input:focus, .sw .sw-cs-form select:focus, .sw .sw-cs-form textarea:focus { outline: 2px solid var(--sw-brand); outline-offset: 0; border-color: var(--sw-brand); }
+.sw .sw-cs-radios { display: flex; flex-wrap: wrap; gap: 6px; }
+.sw .sw-cs-radios label { position: relative; }
+.sw .sw-cs-radios input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.sw .sw-cs-radios span { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border: 1px solid #c9cdd3; border-radius: 2px; background: var(--sw-paper); font-size: var(--sw-fs-sm); cursor: pointer; }
+.sw .sw-cs-radios input:checked + span { border-color: var(--sw-brand); color: var(--sw-brand-ink); background: #f7ebe7; font-weight: 700; }
+.sw .sw-cs-radios input:focus-visible + span { outline: 2px solid var(--sw-brand); outline-offset: 2px; }
+.sw .sw-cs-hint { font-size: var(--sw-fs-xs); color: var(--sw-ink-3); line-height: 1.7; }
+.sw .sw-cs-hint a { color: var(--sw-brand-ink); text-decoration: underline; }
+.sw .sw-cs-agree { display: flex; gap: 10px; align-items: flex-start; font-size: var(--sw-fs-xs); color: var(--sw-ink-2); line-height: 1.6; cursor: pointer; }
+.sw .sw-cs-agree input, .sw .sw-cbar__agree input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--sw-brand); flex: none; }
+.sw .sw-cs-hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+.sw .sw-cs-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.sw .sw-cs-or { font-size: var(--sw-fs-sm); color: var(--sw-ink-3); }
+.sw .sw-cs-or a { color: var(--sw-ink); font-weight: 700; }
+.sw .sw-cs-msg { font-size: var(--sw-fs-sm); font-weight: 700; color: #2f6b3a; min-height: 0; }
+.sw .sw-cs-msg:empty { display: none; }
+.sw .sw-cs-msg.is-err { color: var(--sw-brand-ink); }
+.sw button.sw-btn { cursor: pointer; font-family: var(--sw-font); }
+.sw button.sw-btn:disabled { opacity: .6; cursor: default; }
+
+/* ===== 상담 신청 페이지 ===== */
+.sw-pg.sw-ct .sw-ct__grid { display: grid; grid-template-columns: 1fr minmax(240px, 320px); gap: clamp(28px, 4vw, 64px); align-items: start; }
+.sw-pg.sw-ct .sw-ct__grid > * { min-width: 0; }
+.sw-pg.sw-ct .sw-ct__side { display: grid; gap: 14px; position: sticky; top: 90px; }
+.sw-pg.sw-ct .sw-ct__card { border: 1px solid var(--sw-line); background: var(--sw-paper); padding: 20px; display: grid; gap: 6px; }
+.sw-pg.sw-ct .sw-ct__card small { font-size: var(--sw-fs-xs); font-weight: 700; letter-spacing: .06em; color: var(--sw-ink-3); }
+.sw-pg.sw-ct .sw-ct__card b { font-size: var(--sw-fs-lg); }
+.sw-pg.sw-ct .sw-ct__card p { font-size: var(--sw-fs-sm); color: var(--sw-ink-2); }
+.sw-pg.sw-ct .sw-ct__card a { color: inherit; }
+.sw-pg.sw-ct .sw-ct__steps { counter-reset: s; display: grid; gap: 8px; margin-top: 4px; }
+.sw-pg.sw-ct .sw-ct__steps li { position: relative; padding-left: 26px; font-size: var(--sw-fs-sm); color: var(--sw-ink-2); }
+.sw-pg.sw-ct .sw-ct__steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 0; top: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--sw-ink); color: #fff; font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+.sw-pg.sw-ct #sw-consult { background: var(--sw-paper); border: 1px solid var(--sw-line); padding: clamp(20px, 3vw, 36px); }
+
+/* ===== 하단 상담바 (PC) + 상담 버튼·창 (모바일) ===== */
+#sw-cbar { background: transparent; font-size: 15px; }
+#sw-cbar .sw-cbar__in { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9990; display: flex; align-items: center; gap: 24px;
+  padding: 12px max(24px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(24px, env(safe-area-inset-left, 0px));
+  background: #1f2226; color: #e6e8eb; border-top: 2px solid var(--sw-brand); box-shadow: 0 -8px 24px rgba(0,0,0,.18); }
+#sw-cbar .sw-cbar__tel { display: grid; line-height: 1.25; padding-right: 24px; border-right: 1px solid #33373d; color: #fff; text-decoration: none; flex: none; }
+#sw-cbar .sw-cbar__tel small { font-size: 12px; color: #9aa1ab; }
+#sw-cbar .sw-cbar__tel b { font-size: 19px; }
+#sw-cbar .sw-cbar__form { flex: 1; display: flex; align-items: center; gap: 8px; min-width: 0; position: relative; }
+#sw-cbar .sw-cbar__t { font-size: 15px; white-space: nowrap; margin-right: 6px; color: #fff; }
+#sw-cbar .sw-cbar__form select, #sw-cbar .sw-cbar__form input:not([type=checkbox]) { height: 42px; min-width: 0; flex: 1 1 140px; max-width: 200px; font: inherit; font-size: 15px;
+  color: #1b1d20; background: #fff; border: 0; border-radius: 2px; padding: 0 12px; }
+#sw-cbar .sw-cbar__form select:focus, #sw-cbar .sw-cbar__form input:focus { outline: 2px solid var(--sw-brand-on-dark); }
+#sw-cbar .sw-cbar__agree { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #c9ced6; white-space: nowrap; cursor: pointer; }
+#sw-cbar .sw-btn { min-height: 42px; padding: 0 18px; white-space: nowrap; }
+#sw-cbar .sw-cbar__more { font-size: 13px; color: #c9ced6; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+#sw-cbar .sw-cbar__form .sw-cs-msg { position: absolute; left: 0; bottom: calc(100% + 14px); background: #fff; color: #2f6b3a; padding: 8px 12px; border-radius: 2px; box-shadow: 0 6px 18px rgba(0,0,0,.2); font-size: 14px; }
+#sw-cbar .sw-cbar__form .sw-cs-msg.is-err { color: var(--sw-brand-ink); }
+#sw-cbar .sw-cbar__x { flex: none; width: 34px; height: 34px; border: 0; background: transparent; color: #9aa1ab; font-size: 24px; line-height: 1; cursor: pointer; }
+#sw-cbar .sw-cbar__x:hover { color: #fff; }
+#sw-cbar.is-off .sw-cbar__in { display: none; }
+body.sw-has-cbar { padding-bottom: 70px !important; }
+
+#sw-cbar .sw-cfab { display: none; position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 9990;
+  height: 48px; padding: 0 20px; border: 0; border-radius: 24px; background: var(--sw-brand); color: #fff; font: 700 15px var(--sw-font); box-shadow: 0 6px 18px rgba(0,0,0,.25); cursor: pointer; }
+#sw-cbar .sw-cmodal { position: fixed; inset: 0; z-index: 9995; background: rgba(15,17,20,.55); display: flex; align-items: flex-end; justify-content: center; }
+#sw-cbar .sw-cmodal[hidden] { display: none; }
+#sw-cbar .sw-cmodal__box { width: 100%; max-width: 640px; max-height: 92vh; overflow: auto; background: var(--sw-paper); color: var(--sw-ink); padding: 0 20px calc(20px + env(safe-area-inset-bottom, 0px)); border-radius: 10px 10px 0 0; }
+#sw-cbar .sw-cmodal__head { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; padding: 16px 0 12px; background: var(--sw-paper); border-bottom: 1px solid var(--sw-line); margin-bottom: 16px; }
+#sw-cbar .sw-cmodal__head b { font-size: 18px; }
+#sw-cbar .sw-cmodal__x { border: 0; background: transparent; font-size: 28px; line-height: 1; color: var(--sw-ink-2); cursor: pointer; width: 40px; height: 40px; }
+html.sw-noscroll, html.sw-noscroll body { overflow: hidden !important; }
+
+@media (max-width: 1180px) { #sw-cbar .sw-cbar__more { display: none; } }
+@media (max-width: 1000px) { #sw-cbar .sw-cbar__t { display: none; } }
+@media (max-width: 900px) {
+  #sw-cbar .sw-cbar__in { display: none; }
+  body.sw-has-cbar { padding-bottom: 0 !important; }
+  #sw-cbar .sw-cfab { display: inline-flex; align-items: center; }
+  #sw-cbar.is-off .sw-cfab { display: inline-flex; }
+}
+@media (max-width: 760px) {
+  .sw .sw-cs-row--2 { grid-template-columns: 1fr; }
+  .sw-pg.sw-ct .sw-ct__grid { grid-template-columns: 1fr; }
+  .sw-pg.sw-ct .sw-ct__side { position: static; }
+}
+
 /* ===== 페이지별 ===== */
 /* ---------- 메인 (/) ---------- */
 .sw-main .sw-mhero { padding-block: clamp(36px, 5vw, 64px) clamp(40px, 5vw, 64px); }
@@ -523,3 +616,5 @@ html, body { overflow-x: clip; }
   .sw-as .sw-steps { grid-template-columns: 1fr; border-left: 0; }
   .sw-as .sw-steps li { border-right: 0; border-top: 1px solid var(--sw-line); padding: 16px 0 4px; }
 }
+/* ---------- 상담 신청 (/43) ---------- */
+.sw-ct .sw-hero { padding-block: clamp(36px, 5vw, 64px) clamp(28px, 4vw, 44px); }
