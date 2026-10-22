@@ -1,7 +1,7 @@
 /**
  * 선우특수소재 상담 신청 수신용 Google Apps Script (drawdream89@gmail.com 계정)
  * 1) 구글 스프레드시트 새로 만들기 (이름 예: 선우특수소재 상담신청) → 확장 프로그램 > Apps Script
- * 2) 이 코드 전체 붙여넣기 → 저장 → 상단에서 testMail 선택 후 실행 (권한 허용) → sunwoosm@naver.com 수신 확인
+ * 2) 이 코드 전체 붙여넣기 → 저장 → 상단에서 testMail 선택 후 실행 (권한 허용) → 내 Gmail(drawdream89)로 테스트 메일 수신 확인
  * 3) 배포 > 새 배포 > 유형: 웹 앱 / 실행 계정: 나 / 액세스 권한: 모든 사용자 → 배포
  * 4) 발급된 웹 앱 URL(.../exec)을 그래피스타(Claude)에게 전달 → sw.js 의 endpoint 에 입력
  */
@@ -75,6 +75,7 @@ function json(o) { return ContentService.createTextOutput(JSON.stringify(o)).set
 
 /** 배포 전 테스트: 편집기 상단에서 testMail 선택 → 실행 */
 function testMail() {
-  MailApp.sendEmail({ to: TO_EMAIL, subject: '[선우 상담신청] 테스트 메일', htmlBody: '홈페이지 상담 신청 메일 연결 테스트입니다. 이 메일이 보이면 정상입니다.', name: SENDER_NAME });
+  getSheet_(); // 시트·제목줄 미리 생성
+  MailApp.sendEmail({ to: Session.getActiveUser().getEmail() || TO_EMAIL, subject: '[선우 상담신청] 테스트 메일', htmlBody: '홈페이지 상담 신청 메일 연결 테스트입니다. 이 메일이 보이면 정상입니다.', name: SENDER_NAME });
   Logger.log('발송 완료. 남은 일일 발송량: ' + MailApp.getRemainingDailyQuota());
 }
