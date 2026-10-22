@@ -1,43 +1,68 @@
 <!-- 선우특수소재 · 상담 신청·오시는 길 (/23) — 아임웹 코드 위젯에 전체 붙여넣기. 디자인은 공통 head 코드(sw.css)에서 불러옴 -->
 <div class="sw sw-pg sw-ct">
 
-  <section class="sw-hero">
+  <section class="sw-ct__hero">
     <div class="sw-inner">
-      <p class="sw-crumb">Contact Us / <span>상담 신청 · 오시는 길</span></p>
-      <h1 class="sw-h1">상담 신청<small>CONTACT · REQUEST A QUOTE · LOCATION</small></h1>
-      <p class="sw-lead">부품 제작, 소재 선정, 압출·압축성형, 코팅·후가공, 에어패킹 A/S까지 무엇이든 문의해 주세요. 도면이 없어도 샘플이나 사진으로 상담할 수 있습니다.</p>
+      <div>
+        <p class="sw-crumb">Contact Us / <span>상담 신청 · 오시는 길</span></p>
+        <h1 class="sw-h1">상담 신청<small>CONTACT · REQUEST A QUOTE · LOCATION</small></h1>
+        <p class="sw-lead">부품 제작, 소재 선정, 압출·압축성형, 코팅·후가공, 에어패킹 A/S까지 무엇이든 문의해 주세요. 도면이 없어도 샘플이나 사진으로 상담할 수 있습니다.</p>
+      </div>
+      <div class="sw-ct__quick">
+        <a href="tel:0313141653"><small>TEL</small><b>031-314-1653</b><span>평일 09:00 – 18:00 · 주말·공휴일 휴무</span></a>
+        <a href="mailto:sunwoosm@naver.com"><small>MAIL</small><b>sunwoosm@naver.com</b><span>도면·사진은 메일로 보내 주세요</span></a>
+      </div>
     </div>
   </section>
 
   <section class="sw-band sw-band--tint">
     <div class="sw-inner sw-ct__grid">
-      <div id="sw-consult">
-        <noscript><p>온라인 접수를 이용하려면 자바스크립트를 켜 주세요. 전화 031-314-1653 · 메일 sunwoosm@naver.com 으로도 상담하실 수 있습니다.</p></noscript>
-      </div>
-      <aside class="sw-ct__side" aria-label="연락처와 진행 순서">
-        <div class="sw-ct__card"><small>TEL</small><b><a href="tel:0313141653">031-314-1653</a></b><p>평일 09:00 – 18:00 (주말·공휴일 휴무)</p></div>
-        <div class="sw-ct__card"><small>MAIL · 도면 송부</small><b><a href="mailto:sunwoosm@naver.com">sunwoosm@naver.com</a></b><p>도면·사진은 메일로 보내 주세요.</p></div>
-        <div class="sw-ct__card"><small>PROCESS</small>
-          <ol class="sw-ct__steps"><li>상담 신청 접수</li><li>담당자 확인 후 연락</li><li>소재·공정 검토, 견적 안내</li><li>시제품 · 양산</li></ol>
+      <div class="sw-ct__form">
+        <div class="sw-ct__fhead">
+          <h2>온라인 상담 신청</h2>
+          <p><i>*</i> 표시는 필수 항목입니다</p>
         </div>
+        <div id="sw-consult">
+          <noscript><p>온라인 접수를 이용하려면 자바스크립트를 켜 주세요. 전화 031-314-1653 · 메일 sunwoosm@naver.com 으로도 상담하실 수 있습니다.</p></noscript>
+        </div>
+      </div>
+      <aside class="sw-ct__side" aria-label="상담 진행 순서">
+        <div>
+          <h3>PROCESS</h3>
+          <ol class="sw-ct__flow">
+            <li><b>상담 신청 접수</b><span>온라인·전화·메일 중 편한 방법으로</span></li>
+            <li><b>담당자 확인 후 연락</b><span>용도·사용 환경·수량을 함께 확인합니다</span></li>
+            <li><b>소재·공정 검토, 견적 안내</b><span>도면·샘플 기준으로 적합한 소재와 공법 제안</span></li>
+            <li><b>시제품 · 양산</b><span>시제품 확인 후 양산 진행</span></li>
+          </ol>
+        </div>
+        <p class="sw-ct__tip"><b>도면이 없어도 괜찮습니다</b>샘플이나 사진, 대략적인 치수만 있어도 상담할 수 있습니다. 사용 온도와 접촉 유체를 알려 주시면 소재 선정이 빨라집니다.</p>
       </aside>
     </div>
   </section>
 
   <section class="sw-band" id="sw-location">
-    <div class="sw-inner sw-sheet">
+    <div class="sw-inner">
       <p class="sw-label">Location<b>오시는 길</b></p>
-      <div>
-        <h2 class="sw-h2">경기도 시흥시 포도원로116번길 25<br>프라임캐슬지식산업센터 212호</h2>
-        <dl class="sw-spec sw-ct__addr">
-          <div><dt>TEL</dt><dd><a href="tel:0313141653">031-314-1653</a></dd></div>
-          <div><dt>FAX</dt><dd>031-314-1174</dd></div>
-          <div><dt>MAIL</dt><dd><a href="mailto:sunwoosm@naver.com">sunwoosm@naver.com</a></dd></div>
-          <div><dt>운영</dt><dd>평일 09:00 – 18:00 (주말·공휴일 휴무)</dd></div>
-        </dl>
-        <div class="sw-links sw-ct__maps">
-          <a href="https://map.naver.com/p/search/%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%ED%8F%AC%EB%8F%84%EC%9B%90%EB%A1%9C116%EB%B2%88%EA%B8%B8%2025" target="_blank" rel="noopener">네이버 지도로 길찾기</a>
-          <a href="https://map.kakao.com/?q=%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%ED%8F%AC%EB%8F%84%EC%9B%90%EB%A1%9C116%EB%B2%88%EA%B8%B8%2025" target="_blank" rel="noopener">카카오맵으로 길찾기</a>
+      <div class="sw-ct__loc">
+        <div class="sw-ct__map">
+          <iframe src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%ED%8F%AC%EB%8F%84%EC%9B%90%EB%A1%9C116%EB%B2%88%EA%B8%B8%2025&amp;z=16&amp;hl=ko&amp;output=embed" title="선우특수소재 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="sw-ct__info">
+          <div>
+            <small>ADDRESS</small>
+            <address>경기도 시흥시 포도원로116번길 25<br>프라임캐슬지식산업센터 212호</address>
+          </div>
+          <dl class="sw-spec">
+            <div><dt>TEL</dt><dd><a href="tel:0313141653">031-314-1653</a></dd></div>
+            <div><dt>FAX</dt><dd>031-314-1174</dd></div>
+            <div><dt>MAIL</dt><dd><a href="mailto:sunwoosm@naver.com">sunwoosm@naver.com</a></dd></div>
+            <div><dt>운영</dt><dd>평일 09:00 – 18:00</dd></div>
+          </dl>
+          <div class="sw-ct__maps">
+            <a href="https://map.naver.com/p/search/%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%ED%8F%AC%EB%8F%84%EC%9B%90%EB%A1%9C116%EB%B2%88%EA%B8%B8%2025" target="_blank" rel="noopener" style="--c:#03c75a">네이버 지도</a>
+            <a href="https://map.kakao.com/?q=%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%ED%8F%AC%EB%8F%84%EC%9B%90%EB%A1%9C116%EB%B2%88%EA%B8%B8%2025" target="_blank" rel="noopener" style="--c:#fee500">카카오맵</a>
+          </div>
         </div>
       </div>
     </div>
