@@ -616,5 +616,9 @@ html.sw-noscroll, html.sw-noscroll body { overflow: hidden !important; }
   .sw-as .sw-steps { grid-template-columns: 1fr; border-left: 0; }
   .sw-as .sw-steps li { border-right: 0; border-top: 1px solid var(--sw-line); padding: 16px 0 4px; }
 }
-/* ---------- 상담 신청 (/43) ---------- */
+/* ---------- 상담 신청·오시는 길 (/23) ---------- */
 .sw-ct .sw-hero { padding-block: clamp(36px, 5vw, 64px) clamp(28px, 4vw, 44px); }
+.sw-ct .sw-ct__addr { margin-top: 20px; max-width: 520px; }
+.sw-ct .sw-ct__addr a { color: inherit; }
+.sw-ct .sw-ct__maps { margin-top: 18px; }
+.sw-ct .sw-ct__maps a { font-size: var(--sw-fs-sm); padding: 10px 14px; }
