@@ -67,7 +67,7 @@
     tel: '031-314-1653',
     mail: 'sunwoosm@naver.com',
     page: '/23',                  /* 상담 신청 페이지 (Contact Us) */
-    hideOn: ['/admin', '/login', '/site_join', '/shop_payment', '/shop_cart', '/43', '/23']
+    hideOn: ['/admin', '/login', '/site_join', '/shop_payment', '/shop_cart', '/shop_view', '/66', '/43', '/23']
   };
   var TYPES = ['부품 제작', '소재 상담', '압출성형', '압축(프레스)성형', '코팅·후가공', '에어패킹·A/S', '기타'];
   var loadedAt = Date.now();
