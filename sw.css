@@ -64,7 +64,10 @@ body .sw h1, body .sw h2, body .sw h3, body .sw h4 { font-family: var(--sw-font)
 /* 섹션 본문 (좌측 라벨 레일 없이 한 단) */
 .sw-sheet { display: block; }
 .sw-sheet > * { min-width: 0; }
-.sw-sheet > .sw-label { display: none; }
+/* 붙여넣기 전 옛 위젯(data-v 없음)이 자동 교체되기 전 잠깐 보일 때를 위한 옛 레이아웃 */
+.sw-pg:not([data-v]) .sw-sheet { display: grid; grid-template-columns: minmax(160px, 220px) 1fr; gap: var(--sw-gap) clamp(24px, 4vw, 64px); align-items: start; }
+.sw-pg:not([data-v]) .sw-h2 { font-size: 22px !important; }
+@media (max-width: 760px) { .sw-pg:not([data-v]) .sw-sheet { grid-template-columns: 1fr; } }
 .sw-label {
   font-family: var(--sw-mono);
   font-size: var(--sw-fs-xs);
@@ -236,7 +239,7 @@ body .sw .sw-close h2 { font-size: clamp(22px, 17px + 1vw, 28px); }
 /* 상담 (구버전) */
 .sw-pg .sw-cta { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: end; }
 .sw-pg .sw-cta > * { min-width: 0; }
-.sw-pg .sw-cta h2 { font-size: var(--sw-fs-xl); font-weight: 700; }
+.sw-pg .sw-cta h2 { font-size: clamp(24px, 18px + 1.2vw, 32px); font-weight: 700; }
 .sw-pg .sw-contact { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 20px; font-family: var(--sw-mono); font-size: var(--sw-fs-md); }
 .sw-pg .sw-contact span { color: #9aa1ab; font-size: var(--sw-fs-xs); margin-right: 8px; letter-spacing: .06em; }
 .sw-pg .sw-cta__btns { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -440,6 +443,28 @@ html.sw-noscroll, html.sw-noscroll body { overflow: hidden !important; }
   .sw-main .sw-facts { grid-template-columns: repeat(2, 1fr); }
   .sw-main .sw-asline { grid-template-columns: 1fr; }
 }
+/* 옛 위젯(교체 전) 표시용 */
+.sw-main:not([data-v]) .sw-tech { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sw-gap); margin-top: 28px; }
+.sw-main:not([data-v]) .sw-tech > article { min-width: 0; display: grid; grid-template-rows: auto 1fr; background: var(--sw-paper); border: 1px solid var(--sw-line); }
+.sw-main:not([data-v]) .sw-tech img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.sw-main:not([data-v]) .sw-tech__body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; }
+.sw-main:not([data-v]) .sw-tech small { font-size: var(--sw-fs-xs); font-weight: 700; color: var(--sw-brand-ink); letter-spacing: .04em; }
+.sw-main:not([data-v]) .sw-tech h3 { font-size: var(--sw-fs-lg); font-weight: 700; }
+.sw-main:not([data-v]) .sw-tech p { font-size: var(--sw-fs-sm); color: var(--sw-ink-2); }
+.sw-main:not([data-v]) .sw-tech .sw-chips { margin-top: 4px; }
+.sw-main:not([data-v]) .sw-tech .sw-more { margin-top: auto; padding-top: 6px; font-size: var(--sw-fs-sm); font-weight: 700; }
+.sw-main:not([data-v]) .sw-tech .sw-more:hover { color: var(--sw-brand-ink); }
+.sw-main:not([data-v]) .sw-inds2 { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 24px; border-top: 1px solid var(--sw-line); border-left: 1px solid var(--sw-line); }
+.sw-main:not([data-v]) .sw-inds2 li { padding: 16px; border-right: 1px solid var(--sw-line); border-bottom: 1px solid var(--sw-line); min-width: 0; }
+.sw-main:not([data-v]) .sw-inds2 b { display: block; font-size: var(--sw-fs-md); }
+.sw-main:not([data-v]) .sw-inds2 span { display: block; font-size: var(--sw-fs-xs); color: var(--sw-ink-3); margin-top: 4px; }
+.sw-main:not([data-v]) .sw-asband { background: var(--sw-brand); color: #fff; }
+.sw-main:not([data-v]) .sw-asband .sw-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding-block: 28px; }
+.sw-main:not([data-v]) .sw-asband h2 { font-size: var(--sw-fs-lg); font-weight: 700; }
+.sw-main:not([data-v]) .sw-asband p { font-size: var(--sw-fs-sm); color: #f1d6cf; margin-top: 4px; }
+.sw-main:not([data-v]) .sw-asband a.sw-btn { color: #fff; }
+.sw-main:not([data-v]) .sw-asband a.sw-btn:hover { background: rgba(255,255,255,.1); }
+@media (max-width: 760px) { .sw-main:not([data-v]) .sw-tech { grid-template-columns: 1fr; } .sw-main:not([data-v]) .sw-inds2 { grid-template-columns: repeat(2, 1fr); } }
 /* ---------- 압축성형 (/34) ---------- */
 #sw-material { scroll-margin-top: 96px; }
 .sw-press .sw-choose { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 28px; border-top: 2px solid var(--sw-ink); }
