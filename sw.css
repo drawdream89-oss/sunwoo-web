@@ -247,6 +247,9 @@ body .sub-menu.menu-vertical > ul > li.active > a { background: #1c2127 !importa
   .sw-foot__top { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
   .sw-foot__col:nth-of-type(4) { grid-column: 1 / -1; }
 }
+/* 상단 아래 희미한 가로선 제거 */
+#s20220608b4c1a9e344bbc, #s2022110994edacceb8eff { border-bottom: 0 !important; box-shadow: none !important; }
+#s20220608b4c1a9e344bbc .section_bg, #s20220608b4c1a9e344bbc .section_bg_color, #s2022110994edacceb8eff .section_bg, #s2022110994edacceb8eff .section_bg_color { bottom: 0 !important; height: auto !important; }
 
 /* ===== 페이지 공통 ===== */
 .sw-pg .sw-hero { padding-block: clamp(40px, 6vw, 80px) clamp(40px, 5vw, 64px); border-bottom: 1px solid var(--sw-line); }
