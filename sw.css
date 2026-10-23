@@ -329,7 +329,7 @@ body .sw .sw-cs-radios label { display: inline-block !important; width: auto !im
 /* ===== 하단 상담바 (PC) + 상담 버튼·창 (모바일) ===== */
 #sw-cbar { background: transparent; font-size: 15px; }
 #sw-cbar .sw-cbar__in { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9990; display: flex; align-items: center; justify-content: center; gap: 24px;
-  padding: 12px max(24px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(24px, env(safe-area-inset-left, 0px));
+  padding: 12px max(64px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(64px, env(safe-area-inset-left, 0px));
   background: #1f2226; color: #e6e8eb; border-top: 2px solid var(--sw-brand); box-shadow: 0 -8px 24px rgba(0,0,0,.18); }
 #sw-cbar .sw-cbar__tel { display: grid; line-height: 1.25; padding-right: 24px; border-right: 1px solid #33373d; color: #fff; text-decoration: none; flex: none; }
 #sw-cbar .sw-cbar__tel small { font-size: 12px; color: #9aa1ab; }
