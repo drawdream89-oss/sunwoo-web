@@ -63,7 +63,7 @@
 (function () {
   'use strict';
   var CFG = {
-    endpoint: '',                 /* Apps Script 웹 앱 URL (.../exec) — 배포 후 입력 */
+    endpoint: 'https://script.google.com/macros/s/AKfycbySHLmf9h3sQspf4OSL3eDVVrCRLjP67HHHBkJ-hMYC5ze_8HJNGfz-LOb39WkwBXVu/exec',                 /* Apps Script 웹 앱 URL (.../exec) — 배포 후 입력 */
     tel: '031-314-1653',
     mail: 'sunwoosm@naver.com',
     page: '/23',                  /* 상담 신청 페이지 (Contact Us) */
