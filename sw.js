@@ -86,8 +86,35 @@
     target.appendChild(a);
   }
 
+  /* 2-1. 하단 정보 새 디자인 (아임웹 하단은 숨기고 같은 정보를 정리해서 표시) */
+  function buildFooter() {
+    var sec = document.getElementById('s202207152d584eee8d8ce');
+    if (!sec || sec.querySelector('.sw-foot')) return;
+    var img = sec.querySelector('img'); var logo = img ? img.getAttribute('src') : '';
+    var U = 'https://www.sunwoosm.com';
+    function col(t, items) { return '<div class="sw-foot__col"><b>' + t + '</b><ul>' + items.map(function (x) { return '<li><a href="' + U + x[1] + '">' + x[0] + '</a></li>'; }).join('') + '</ul></div>'; }
+    var box = document.createElement('div');
+    box.className = 'sw sw-foot';
+    box.innerHTML = '<div class="sw-inner">' +
+      '<div class="sw-foot__top">' +
+        '<div class="sw-foot__brand">' + (logo ? '<img src="' + logo + '" alt="선우특수소재" width="150" height="40">' : '<strong>선우특수소재</strong>') +
+          '<p>고무·실리콘 부품 개발과 제조<br>압축성형, 압출성형, 자재 공급, A/S</p></div>' +
+        col('회사소개', [['회사개요', '/24'], ['회사연혁', '/25'], ['인증&amp;특허', '/26'], ['공지·소식', '/27'], ['A/S 안내', '/as']]) +
+        col('제품', [['압축성형', '/34'], ['압출성형', '/75'], ['고무·플라스틱 자재', '/36'], ['오링 규격표', '/71'], ['제품 갤러리', '/65']]) +
+        col('고객지원', [['상담 신청·오시는 길', '/23'], ['기술자료실', '/22'], ['자주 묻는 질문', '/40'], ['전자카탈로그', '/41'], ['제품구매', '/66']]) +
+        '<div class="sw-foot__contact"><span>상담 문의</span><a class="tel" href="tel:0313141653">031-314-1653</a>' +
+          '<p>평일 09:00–18:00, 주말·공휴일 휴무<br><a href="mailto:sunwoosm@naver.com">sunwoosm@naver.com</a><br>팩스 031-314-1174</p></div>' +
+      '</div>' +
+      '<div class="sw-foot__bottom"><p>선우특수소재 <i></i> 대표자 최주형, 구양서, 박재우 <i></i> 사업자등록번호 741-29-00704<br>경기도 시흥시 포도원로116번길 25 프라임캐슬지식산업센터 212호</p>' +
+        '<p>© 2019 선우특수소재 <a class="sw-admin" href="/login?back_url=' + btoa(location.pathname || '/') + '">관리자</a></p></div>' +
+    '</div>';
+    sec.appendChild(box);
+    sec.classList.add('sw-foot-on');
+  }
+
   function init() {
     [].forEach.call(document.querySelectorAll('.sw-or'), initSpecSearch);
+    try { buildFooter(); } catch (e) {}
     addAdminLink();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
