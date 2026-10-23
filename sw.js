@@ -1,4 +1,41 @@
 /* 선우특수소재 sunwoosm.com 공통 기능 — 이 파일을 고치면 사이트 전체에 반영됩니다 */
+
+/* ===== 0. 페이지 자동 최신화 =====
+   아임웹 코드 위젯에 붙여둔 글(검색엔진용)을 GitHub의 최신본(pages/*.html)으로 방문자 화면에서 교체.
+   위젯과 최신본의 data-v가 같으면 아무것도 하지 않음. 실패하면 위젯 내용 그대로 둠. */
+(function () {
+  'use strict';
+  var BASE = 'https://drawdream89-oss.github.io/sunwoo-web/pages/';
+  var MAP = { '/': 'main', '/34': 'press', '/75': 'extrusion', '/36': 'materials', '/68': 'oring', '/71': 'oring-as',
+    '/72': 'oring-pgsv', '/24': 'company', '/25': 'history', '/as': 'as', '/23': 'consult' };
+  var path = (location.pathname.replace(/\/+$/, '') || '/');
+  var name = MAP[path];
+  if (!name || /^\/admin/.test(path)) return;
+  var KEY = 'swpg:' + name;
+  function root() { return document.querySelector('.sw.sw-pg'); }
+  function parse(html) {
+    var box = document.createElement('div'); box.innerHTML = html;
+    var r = box.querySelector('.sw.sw-pg[data-v]');
+    return r && r.getAttribute('data-page') === name ? r : null;
+  }
+  function swap(html) {
+    var cur = root(), nu = parse(html);
+    if (!cur || !nu || cur.getAttribute('data-v') === nu.getAttribute('data-v')) return false;
+    cur.parentNode.replaceChild(nu, cur);
+    try { document.dispatchEvent(new CustomEvent('sw:swapped')); } catch (e) {}
+    return true;
+  }
+  function run() {
+    if (!root()) return;
+    try { var c = localStorage.getItem(KEY); if (c) swap(c); } catch (e) {}
+    fetch(BASE + name + '.html', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (html) {
+      if (!html || !parse(html)) return;
+      try { localStorage.setItem(KEY, html); } catch (e) {}
+      swap(html);
+    }).catch(function () {});
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
 (function () {
   'use strict';
 
@@ -57,6 +94,7 @@
   else init();
   /* 아임웹은 위젯을 늦게 그리는 경우가 있어 한 번 더 */
   window.addEventListener('load', init);
+  document.addEventListener('sw:swapped', init);
 })();
 
 /* ===== 3. 상담 신청 (전용 페이지 폼 + PC 하단 상담바 + 모바일 상담 버튼) ===== */
@@ -158,6 +196,7 @@
   }
 
   function init() { mountPage(); mountBar(); }
+  document.addEventListener('sw:swapped', mountPage);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
   window.addEventListener('load', init);
 })();
