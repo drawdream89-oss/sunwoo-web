@@ -340,6 +340,8 @@ body .sw .sw-cs-radios label { display: inline-block !important; width: auto !im
   color: #1b1d20; background: #fff; border: 0; border-radius: 2px; padding: 0 12px; }
 #sw-cbar .sw-cbar__form select:focus, #sw-cbar .sw-cbar__form input:focus { outline: 2px solid var(--sw-brand-on-dark); }
 #sw-cbar .sw-cbar__agree { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #c9ced6; white-space: nowrap; cursor: pointer; }
+body #sw-cbar .sw-cbar__agree { width: auto !important; flex: none; margin: 0 !important; } /* 아임웹 label 폭 무력화 */
+#sw-cbar .sw-cbar__form select { flex-basis: 150px; }
 #sw-cbar .sw-btn { min-height: 42px; padding: 0 18px; white-space: nowrap; }
 #sw-cbar .sw-cbar__more { font-size: 13px; color: #c9ced6; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 #sw-cbar .sw-cbar__form .sw-cs-msg { position: absolute; left: 0; bottom: calc(100% + 14px); background: #fff; color: #2f6b3a; padding: 8px 12px; border-radius: 2px; box-shadow: 0 6px 18px rgba(0,0,0,.2); font-size: 14px; }
