@@ -511,6 +511,21 @@ body .sw-main .sw-mh1 { font-size: clamp(34px, 20px + 3.4vw, 64px); font-weight:
   .sw-main .sw-asline { grid-template-columns: 1fr; padding: 20px; }
   .sw-main .sw-specs b { width: 100%; }
 }
+.sw-main .sw-flec { position: relative; display: block; border-radius: var(--sw-r-l); overflow: hidden; background: #f2f5f9; color: var(--sw-ink); }
+.sw-main .sw-flec__bg { width: 100%; height: 100%; min-height: 420px; object-fit: cover; object-position: 70% 50%; position: absolute; inset: 0; transition: transform .6s ease; }
+.sw-main .sw-flec:hover .sw-flec__bg { transform: scale(1.02); }
+.sw-main .sw-flec__txt { position: relative; max-width: 470px; padding: clamp(36px, 5vw, 64px); min-height: 420px; display: flex; flex-direction: column; justify-content: center; }
+.sw-main .sw-flec__logo { width: 168px; height: auto; }
+body .sw-main .sw-flec h2 { font-size: clamp(26px, 19px + 1.4vw, 36px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.25; margin-top: 22px; }
+.sw-main .sw-flec p { font-size: 15px; color: var(--sw-ink-2); margin-top: 14px; line-height: 1.75; }
+.sw-main .sw-flec__awards { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+.sw-main .sw-flec__awards li { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.85); color: var(--sw-ink-2); }
+.sw-main .sw-flec__go { align-self: flex-start; margin-top: 26px; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: var(--sw-r-s); background: #1d8fe0; color: #fff; font-size: 15px; font-weight: 700; }
+.sw-main .sw-flec:hover .sw-flec__go { background: #1478c2; }
+@media (max-width: 760px) {
+  .sw-main .sw-flec__bg { position: static; height: auto; min-height: 0; aspect-ratio: 4 / 3; object-position: 80% 50%; }
+  .sw-main .sw-flec__txt { min-height: 0; padding: 24px 22px 28px; max-width: none; }
+}
 /* 옛 위젯(교체 전) 표시용 */
 .sw-main:not([data-v]) .sw-tech { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sw-gap); margin-top: 28px; }
 .sw-main:not([data-v]) .sw-tech > article { min-width: 0; display: grid; grid-template-rows: auto 1fr; background: var(--sw-paper); border: 1px solid var(--sw-line); }
