@@ -535,6 +535,8 @@ html.sw-noscroll, html.sw-noscroll body { overflow: hidden !important; }
 .sw-company .sw-flow li { padding: 16px; border-right: 1px solid var(--sw-line); border-bottom: 1px solid var(--sw-line); min-width: 0; background: var(--sw-paper); }
 .sw-company .sw-flow .n { font-size: var(--sw-fs-xs); color: var(--sw-brand-ink); letter-spacing: .06em; }
 .sw-company .sw-flow b { display: block; font-size: var(--sw-fs-md); margin-top: 4px; }
+.sw-company .sw-flow .d { display: block; font-size: var(--sw-fs-xs); color: var(--sw-ink-2); line-height: 1.6; margin-top: 4px; }
+.sw-company .sw-cap-lead { margin-top: 14px; font-size: var(--sw-fs-sm); color: var(--sw-ink-2); line-height: 1.75; max-width: 40em; }
 .sw-company .sw-flow-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(24px, 4vw, 48px); align-items: center; margin-top: 8px; }
 .sw-company .sw-flow-wrap > * { min-width: 0; }
 
