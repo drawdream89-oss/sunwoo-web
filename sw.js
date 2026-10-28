@@ -227,3 +227,48 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
   window.addEventListener('load', init);
 })();
+
+/* ===== 4. 움직임 (10/28) =====
+   스크롤하면 아래에서 살짝 올라오며 나타남 · 첫 화면 등장 · 카드 호버(호버는 sw.css).
+   '동작 줄이기' 설정 사용자는 전부 끔. 스크립트가 안 돌면 모든 내용이 그냥 보임. */
+(function () {
+  'use strict';
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var html = document.documentElement;
+  html.classList.add('sw-anim');
+  var SEL = [
+    '.sw-h2', '.sw-band .sw-lead', '.sw-cat', '.sw-product', '.sw-ind', '.sw-eq li', '.sw-floor__grid li', '.sw-floor__head > *',
+    '.sw-svc > li', '.sw-steps > li', '.sw-proofs > li', '.sw-ways > li', '.sw-mats > li', '.sw-flow-wrap > .sw-photo',
+    '.sw-table', '.sw-fold', '.sw-close__in', '.sw-silicell', '.sw-cols > div', '.sw-note', '.sw-flec', '.sw-cards > *'
+  ].join(',');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target; el.classList.add('is-in'); io.unobserve(el);
+      var d = parseInt(el.style.getPropertyValue('--rv-d'), 10) || 0;
+      setTimeout(function () { el.removeAttribute('data-rv'); el.classList.remove('is-in'); el.style.removeProperty('--rv-d'); }, 800 + d);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  function prep() {
+    var root = document.querySelector('.sw.sw-pg'); if (!root) return;
+    var vh = window.innerHeight || 800;
+    [].forEach.call(root.querySelectorAll(SEL), function (el) {
+      if (el.hasAttribute('data-rv') || el.closest('.sw-hero, .sw-mhero, .sw-ct__hero')) return;
+      if (el.getBoundingClientRect().top < vh * 0.92) return; // 첫 화면에 이미 보이는 것은 그대로
+      var sib = el.parentNode ? [].filter.call(el.parentNode.children, function (c) { return c.matches(SEL); }) : [];
+      var i = Math.max(0, sib.indexOf(el));
+      el.setAttribute('data-rv', '');
+      el.style.setProperty('--rv-d', Math.min(i, 5) * 70 + 'ms');
+      io.observe(el);
+    });
+  }
+  function intro() {
+    var root = document.querySelector('.sw.sw-pg'); if (!root || root.__swIntro) return;
+    root.__swIntro = 1; root.classList.add('sw-intro');
+  }
+  function init() { intro(); prep(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  document.addEventListener('sw:swapped', function () { setTimeout(prep, 30); });
+  window.addEventListener('load', function () { setTimeout(prep, 200); });
+})();

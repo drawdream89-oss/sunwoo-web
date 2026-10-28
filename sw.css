@@ -996,3 +996,35 @@ body .sw .sw-close h2 { font-size: clamp(22px, 17px + 1vw, 30px); font-weight: 8
   .sw-main .sw-floor__grid li { height: 200px; }
   .sw-main .sw-floor__grid li:nth-child(4) { display: none; }
 }
+
+/* ===== 움직임 (10/28) — sw.js가 html에 .sw-anim을 붙였을 때만 동작 ===== */
+@keyframes swUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes swZoom { from { transform: scale(1.07); } to { transform: scale(1); } }
+.sw-anim .sw [data-rv] { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.2,.7,.2,1) var(--rv-d, 0ms), transform .7s cubic-bezier(.2,.7,.2,1) var(--rv-d, 0ms); }
+.sw-anim .sw [data-rv].is-in { opacity: 1; transform: none; }
+/* 첫 화면 등장 */
+.sw-anim .sw-intro .sw-ha__bg { animation: swZoom 1.8s cubic-bezier(.2,.7,.2,1) both; }
+.sw-anim .sw-intro .sw-ha__in > * { animation: swUp .8s cubic-bezier(.2,.7,.2,1) both; }
+.sw-anim .sw-intro .sw-ha__in > :nth-child(2) { animation-delay: .08s; }
+.sw-anim .sw-intro .sw-ha__in > :nth-child(3) { animation-delay: .18s; }
+.sw-anim .sw-intro .sw-ha__in > :nth-child(4) { animation-delay: .28s; }
+.sw-anim .sw-intro .sw-ha__facts .sw-facts > div { animation: swUp .7s cubic-bezier(.2,.7,.2,1) both; }
+.sw-anim .sw-intro .sw-ha__facts .sw-facts > div:nth-child(1) { animation-delay: .35s; }
+.sw-anim .sw-intro .sw-ha__facts .sw-facts > div:nth-child(2) { animation-delay: .42s; }
+.sw-anim .sw-intro .sw-ha__facts .sw-facts > div:nth-child(3) { animation-delay: .49s; }
+.sw-anim .sw-intro .sw-ha__facts .sw-facts > div:nth-child(4) { animation-delay: .56s; }
+.sw-anim .sw-intro .sw-hero__grid > * { animation: swUp .8s cubic-bezier(.2,.7,.2,1) both; }
+.sw-anim .sw-intro .sw-hero__grid > :nth-child(2) { animation-delay: .15s; }
+/* 카드 호버 */
+.sw-cat, .sw-pg .sw-product, .sw-company .sw-eq li, .sw-company .sw-ind { transition: transform .25s cubic-bezier(.2,.7,.2,1); }
+@media (hover: hover) {
+  .sw-cat:hover, .sw-pg .sw-product:hover, .sw-company .sw-eq li:hover { transform: translateY(-4px); }
+  .sw-cat:hover img, .sw-pg .sw-product:hover .sw-photo, .sw-company .sw-eq li:hover img { box-shadow: 0 14px 30px rgba(15,20,30,.12); }
+  .sw-cat img, .sw-pg .sw-product .sw-photo, .sw-company .sw-eq img { transition: box-shadow .25s; }
+  .sw-main .sw-floor__grid img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+  .sw-main .sw-floor__grid li:hover img { transform: scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sw-anim .sw [data-rv] { opacity: 1; transform: none; }
+  .sw-anim .sw-intro * { animation: none !important; }
+}
