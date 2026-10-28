@@ -967,3 +967,32 @@ body .sw .sw-close h2 { font-size: clamp(22px, 17px + 1vw, 30px); font-weight: 8
   .sw-main .sw-ha__eye { color: rgba(255,255,255,.7); }
   .sw-main .sw-ha__facts { margin-top: -48px; }
 }
+
+/* A/S 안내 · 카드 사진 (10/28) */
+.sw-as .sw-svc > li .sw-photo { margin: 0 0 14px; }
+/* 자재 · 플라스틱 표 접기 (10/28) */
+.sw .sw-fold { margin-top: 20px; border-radius: var(--sw-r-m); background: #fff; }
+.sw .sw-fold > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 18px 52px 18px 22px; position: relative; font-size: var(--sw-fs-md); font-weight: 700; color: var(--sw-ink); }
+.sw .sw-fold > summary::-webkit-details-marker { display: none; }
+.sw .sw-fold > summary span { font-size: var(--sw-fs-xs); font-weight: 500; color: var(--sw-ink-3); }
+.sw .sw-fold > summary::after { content: ""; position: absolute; right: 22px; top: 50%; width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-70%) rotate(45deg); transition: transform .2s; }
+.sw .sw-fold[open] > summary::after { transform: translateY(-30%) rotate(-135deg); }
+.sw .sw-fold > summary:hover { color: var(--sw-brand-ink); }
+.sw .sw-fold > .sw-table { margin: 0 22px 22px; width: calc(100% - 44px); }
+/* 메인 · 생산 현장 띠 (10/28) */
+.sw-main .sw-floor { background: var(--sw-steel); color: #fff; }
+.sw-main .sw-floor .sw-h2 { color: #fff; }
+.sw-main .sw-floor__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; flex-wrap: wrap; }
+.sw-main .sw-floor__head p { color: #b9c0c8; margin-top: 10px; font-size: 16px; max-width: 34em; }
+.sw-main .sw-floor .sw-textlink { color: #fff; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; }
+.sw-main .sw-floor .sw-textlink svg { width: 16px; height: 16px; }
+.sw-main .sw-floor__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 12px; margin-top: 28px; padding: 0; }
+.sw-main .sw-floor__grid li { position: relative; min-width: 0; border-radius: var(--sw-r-m); overflow: hidden; height: clamp(220px, 26vw, 360px); }
+.sw-main .sw-floor__grid img { width: 100%; height: 100%; object-fit: cover; }
+.sw-main .sw-floor__grid span { position: absolute; left: 12px; bottom: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(18,20,24,.72); color: #fff; font-size: 13px; font-weight: 600; }
+@media (max-width: 760px) {
+  .sw-main .sw-floor__grid { grid-template-columns: 1fr 1fr; }
+  .sw-main .sw-floor__grid .sw-floor__wide { grid-column: 1 / -1; }
+  .sw-main .sw-floor__grid li { height: 200px; }
+  .sw-main .sw-floor__grid li:nth-child(4) { display: none; }
+}

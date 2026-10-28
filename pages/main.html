@@ -1,5 +1,5 @@
 <!-- 선우특수소재 · 메인 (/) — 아임웹 코드 위젯에 전체 붙여넣기. 디자인은 공통 head 코드(sw.css)에서 불러옴. 방문자 화면은 sw.js가 최신본으로 자동 교체 -->
-<div data-page="main" data-v="4bc416462b" class="sw sw-pg sw-main">
+<div data-page="main" data-v="ab07c4e805" class="sw sw-pg sw-main">
 
   <style>/* sw.css 캐시 대비 히어로 스타일 (sw.css와 동일) */
 .sw-main .sw-mhero--a { padding: 0; }
@@ -22,6 +22,23 @@
   .sw-main .sw-ha__in { padding-block: 28px 92px; }
   .sw-main .sw-ha__eye { color: rgba(255,255,255,.7); }
   .sw-main .sw-ha__facts { margin-top: -48px; }
+}
+/* 메인 · 생산 현장 띠 (10/28) */
+.sw-main .sw-floor { background: var(--sw-steel); color: #fff; }
+.sw-main .sw-floor .sw-h2 { color: #fff; }
+.sw-main .sw-floor__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; flex-wrap: wrap; }
+.sw-main .sw-floor__head p { color: #b9c0c8; margin-top: 10px; font-size: 16px; max-width: 34em; }
+.sw-main .sw-floor .sw-textlink { color: #fff; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; }
+.sw-main .sw-floor .sw-textlink svg { width: 16px; height: 16px; }
+.sw-main .sw-floor__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 12px; margin-top: 28px; padding: 0; }
+.sw-main .sw-floor__grid li { position: relative; min-width: 0; border-radius: var(--sw-r-m); overflow: hidden; height: clamp(220px, 26vw, 360px); }
+.sw-main .sw-floor__grid img { width: 100%; height: 100%; object-fit: cover; }
+.sw-main .sw-floor__grid span { position: absolute; left: 12px; bottom: 12px; padding: 4px 10px; border-radius: 999px; background: rgba(18,20,24,.72); color: #fff; font-size: 13px; font-weight: 600; }
+@media (max-width: 760px) {
+  .sw-main .sw-floor__grid { grid-template-columns: 1fr 1fr; }
+  .sw-main .sw-floor__grid .sw-floor__wide { grid-column: 1 / -1; }
+  .sw-main .sw-floor__grid li { height: 200px; }
+  .sw-main .sw-floor__grid li:nth-child(4) { display: none; }
 }</style>
   <section class="sw-mhero sw-mhero--a">
     <div class="sw-ha">
@@ -70,6 +87,24 @@
         <a href="https://www.sunwoosm.com/71" style="background:#fff">AS568 오링 규격표</a>
         <a href="https://www.sunwoosm.com/72" style="background:#fff">P·G·S·V 오링 규격표</a>
       </p>
+    </div>
+  </section>
+
+  <section class="sw-band sw-floor">
+    <div class="sw-inner">
+      <div class="sw-floor__head">
+        <div>
+          <h2 class="sw-h2">시흥 공장에서 직접 만듭니다</h2>
+          <p>프레스와 압출기, 가류기, 코팅기를 갖추고 성형부터 후가공·포장까지 한곳에서 진행합니다.</p>
+        </div>
+        <a class="sw-textlink" href="https://www.sunwoosm.com/24">보유 설비 보기 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+      <ul class="sw-floor__grid">
+        <li class="sw-floor__wide"><img src="https://drawdream89-oss.github.io/sunwoo-web/img/co-design.jpg" alt="선우특수소재 시흥 작업장 내부" width="1200" height="900" loading="lazy"><span>작업장</span></li>
+        <li><img src="https://drawdream89-oss.github.io/sunwoo-web/img/eq-press.jpg" alt="고무 성형용 프레스" width="720" height="960" loading="lazy"><span>프레스</span></li>
+        <li><img src="https://drawdream89-oss.github.io/sunwoo-web/img/eq-extruder.jpg" alt="고무·실리콘 압출기" width="720" height="960" loading="lazy"><span>압출기</span></li>
+        <li><img src="https://drawdream89-oss.github.io/sunwoo-web/img/eq-oven.jpg" alt="성형품 가류기" width="720" height="960" loading="lazy"><span>가류기</span></li>
+      </ul>
     </div>
   </section>
 
