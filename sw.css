@@ -944,3 +944,26 @@ body .sw .sw-close h2 { font-size: clamp(22px, 17px + 1vw, 30px); font-weight: 8
 .sw-company .sw-eq b { display: block; font-size: var(--sw-fs-md); font-weight: 700; margin-top: 10px; }
 .sw-company .sw-eq span { display: block; font-size: var(--sw-fs-xs); color: var(--sw-ink-2); margin-top: 4px; line-height: 1.5; }
 @media (max-width: 760px) { .sw-company .sw-eq { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* 메인 히어로 A안: 사진 전면 배경 (10/28 대표 결정) */
+.sw-main .sw-mhero--a { padding: 0; }
+.sw-main .sw-ha { position: relative; overflow: hidden; background: #15171b; min-height: min(80vh, 720px); display: flex; align-items: center; }
+.sw-main .sw-ha .sw-ha__bg { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 72% 55%; }
+.sw-main .sw-ha::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,20,24,.92) 0%, rgba(18,20,24,.78) 30%, rgba(18,20,24,.25) 58%, rgba(18,20,24,0) 75%); }
+.sw-main .sw-ha__in { position: relative; z-index: 1; width: 100%; padding-block: 96px 140px; color: #fff; }
+.sw-main .sw-ha__in .sw-mh1 { color: #fff; font-size: clamp(36px, 22px + 3vw, 64px); max-width: 12.5em; word-break: keep-all; }
+.sw-main .sw-ha__in .sw-lead { color: rgba(255,255,255,.84); max-width: 30em; margin-top: 20px; font-size: 17px; }
+.sw-main .sw-ha__eye { font-size: 14px; font-weight: 600; letter-spacing: .02em; color: var(--sw-brand-on-dark); margin: 0 0 18px; }
+.sw-main .sw-btn--onDark { color: #fff; border: 1px solid rgba(255,255,255,.55); background: transparent; }
+.sw-main .sw-btn--onDark:hover { background: rgba(255,255,255,.1); }
+.sw-main .sw-ha__facts { position: relative; z-index: 2; margin-top: -64px; }
+.sw-main .sw-ha__facts .sw-facts { margin-top: 0; }
+.sw-main .sw-ha__facts .sw-facts div { background: #fff; box-shadow: 0 10px 30px rgba(15,20,30,.10); }
+@media (max-width: 760px) {
+  .sw-main .sw-ha { display: block; min-height: 0; }
+  .sw-main .sw-ha .sw-ha__bg { position: static; height: auto; aspect-ratio: 4 / 3; object-position: 74% 50%; }
+  .sw-main .sw-ha::after { content: none; }
+  .sw-main .sw-ha__in { padding-block: 28px 92px; }
+  .sw-main .sw-ha__eye { color: rgba(255,255,255,.7); }
+  .sw-main .sw-ha__facts { margin-top: -48px; }
+}

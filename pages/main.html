@@ -1,19 +1,42 @@
 <!-- 선우특수소재 · 메인 (/) — 아임웹 코드 위젯에 전체 붙여넣기. 디자인은 공통 head 코드(sw.css)에서 불러옴. 방문자 화면은 sw.js가 최신본으로 자동 교체 -->
-<div data-page="main" data-v="e2f48ac397" class="sw sw-pg sw-main">
+<div data-page="main" data-v="4bc416462b" class="sw sw-pg sw-main">
 
-  <section class="sw-mhero">
-    <div class="sw-inner">
-      <div class="sw-mhero__top">
-        <h1 class="sw-mh1">압축·압출 성형으로<br>고무·실리콘 부품을<br>만듭니다</h1>
-        <div>
-          <p class="sw-lead">오링·패킹·호스 같은 규격품부터 도면 한 장짜리 주문 부품까지, 원료 배합과 금형, 성형, 후가공을 시흥에서 직접 진행합니다.</p>
-          <div class="sw-hero__cta">
-            <a class="sw-btn sw-btn--solid" href="#sw-products">제품 보기</a>
-            <a class="sw-btn sw-btn--ghost" href="https://www.sunwoosm.com/71">오링 규격표</a>
-          </div>
+  <style>/* sw.css 캐시 대비 히어로 스타일 (sw.css와 동일) */
+.sw-main .sw-mhero--a { padding: 0; }
+.sw-main .sw-ha { position: relative; overflow: hidden; background: #15171b; min-height: min(80vh, 720px); display: flex; align-items: center; }
+.sw-main .sw-ha .sw-ha__bg { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 72% 55%; }
+.sw-main .sw-ha::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,20,24,.92) 0%, rgba(18,20,24,.78) 30%, rgba(18,20,24,.25) 58%, rgba(18,20,24,0) 75%); }
+.sw-main .sw-ha__in { position: relative; z-index: 1; width: 100%; padding-block: 96px 140px; color: #fff; }
+.sw-main .sw-ha__in .sw-mh1 { color: #fff; font-size: clamp(36px, 22px + 3vw, 64px); max-width: 12.5em; word-break: keep-all; }
+.sw-main .sw-ha__in .sw-lead { color: rgba(255,255,255,.84); max-width: 30em; margin-top: 20px; font-size: 17px; }
+.sw-main .sw-ha__eye { font-size: 14px; font-weight: 600; letter-spacing: .02em; color: var(--sw-brand-on-dark); margin: 0 0 18px; }
+.sw-main .sw-btn--onDark { color: #fff; border: 1px solid rgba(255,255,255,.55); background: transparent; }
+.sw-main .sw-btn--onDark:hover { background: rgba(255,255,255,.1); }
+.sw-main .sw-ha__facts { position: relative; z-index: 2; margin-top: -64px; }
+.sw-main .sw-ha__facts .sw-facts { margin-top: 0; }
+.sw-main .sw-ha__facts .sw-facts div { background: #fff; box-shadow: 0 10px 30px rgba(15,20,30,.10); }
+@media (max-width: 760px) {
+  .sw-main .sw-ha { display: block; min-height: 0; }
+  .sw-main .sw-ha .sw-ha__bg { position: static; height: auto; aspect-ratio: 4 / 3; object-position: 74% 50%; }
+  .sw-main .sw-ha::after { content: none; }
+  .sw-main .sw-ha__in { padding-block: 28px 92px; }
+  .sw-main .sw-ha__eye { color: rgba(255,255,255,.7); }
+  .sw-main .sw-ha__facts { margin-top: -48px; }
+}</style>
+  <section class="sw-mhero sw-mhero--a">
+    <div class="sw-ha">
+      <img class="sw-ha__bg" src="https://drawdream89-oss.github.io/sunwoo-web/img/main-hero.jpg" alt="생활용 실리콘 제품부터 위생 호스·가스켓, 산업용 고무 부품까지 선우특수소재가 만드는 제품" width="1672" height="941">
+      <div class="sw-inner sw-ha__in">
+        <p class="sw-ha__eye">고무·실리콘 부품 개발·제조 · 경기 시흥</p>
+        <h1 class="sw-mh1">도면 한 장, 샘플 하나로<br>시작하는 고무·실리콘 부품</h1>
+        <p class="sw-lead">오링·패킹·호스 같은 규격품부터 도면 한 장짜리 주문 부품까지, 원료 배합과 금형, 성형, 후가공을 시흥에서 직접 진행합니다.</p>
+        <div class="sw-hero__cta">
+          <a class="sw-btn sw-btn--solid" href="#sw-products">제품 보기</a>
+          <a class="sw-btn sw-btn--onDark" href="https://www.sunwoosm.com/71">오링 규격표</a>
         </div>
       </div>
-      <figure class="sw-mhero__fig"><img src="https://drawdream89-oss.github.io/sunwoo-web/img/main-hero.jpg" alt="생활용 실리콘 제품부터 위생 호스·가스켓, 산업용 고무 부품까지 선우특수소재가 만드는 제품" width="1672" height="941"></figure>
+    </div>
+    <div class="sw-inner sw-ha__facts">
       <dl class="sw-facts">
         <div><dt>설립</dt><dd>2019년</dd></div>
         <div><dt>등록 특허·상표</dt><dd>4건</dd></div>
