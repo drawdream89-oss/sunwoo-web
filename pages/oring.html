@@ -1,6 +1,12 @@
 <!-- 선우특수소재 · 오링 안내 (/68) — 아임웹 코드 위젯에 전체 붙여넣기. 디자인은 공통 head 코드(sw.css)에서 불러옴. 방문자 화면은 sw.js가 최신본으로 자동 교체 -->
-<div data-page="oring" data-v="f0dee75094" class="sw sw-pg sw-oi">
+<div data-page="oring" data-v="2ceff3c8fe" class="sw sw-pg sw-oi">
 
+  <style>/* 오링 안내 · 치수 그림 (10/28, 사진 대체) */
+.sw-oi .sw-odia { margin: 0; background: var(--sw-tint); border-radius: var(--sw-r-m); padding: 20px 20px 14px; }
+.sw-oi .sw-odia svg { display: block; width: 100%; height: auto; color: var(--sw-ink); }
+.sw-oi .sw-odia__t { font-size: 15px; font-weight: 700; fill: var(--sw-ink); font-family: var(--sw-font); }
+.sw-oi .sw-odia__s { font-size: 13px; fill: var(--sw-ink-3); font-family: var(--sw-font); }
+.sw-oi .sw-odia figcaption { font-size: 13px; color: var(--sw-ink-3); margin-top: 6px; text-align: center; }</style>
   <section class="sw-hero">
     <div class="sw-inner sw-hero__grid">
       <div>
@@ -12,7 +18,29 @@
         </div>
       </div>
       <div class="sw-hero__side">
-        <img class="sw-photo" src="https://drawdream89-oss.github.io/sunwoo-web/img/press-oring-gasket.jpg" alt="투명 실리콘 세니터리 가스켓" width="1200" height="900">
+        <figure class="sw-odia" aria-label="오링 치수: 내경(ID), 외경(OD), 선경(C/S)">
+          <svg viewBox="0 0 400 300" role="img" aria-hidden="true">
+            <defs><marker id="swa" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L8 4L0 8z" fill="#8a2c17"/></marker></defs>
+            <circle cx="150" cy="150" r="92" fill="none" stroke="var(--sw-ink)" stroke-width="26"/>
+            <circle cx="150" cy="150" r="105" fill="none" stroke="var(--sw-ink)" stroke-width="1" opacity=".25"/>
+            <circle cx="150" cy="150" r="79" fill="none" stroke="var(--sw-ink)" stroke-width="1" opacity=".25"/>
+            <g class="sw-odia__dim" color="var(--sw-brand)" stroke="currentColor" stroke-width="1.5">
+              <line x1="71" y1="150" x2="229" y2="150" marker-start="url(#swa)" marker-end="url(#swa)"/>
+              <line x1="45" y1="262" x2="255" y2="262" marker-start="url(#swa)" marker-end="url(#swa)"/>
+              <line x1="45" y1="150" x2="45" y2="270" stroke-dasharray="3 3" opacity=".6"/>
+              <line x1="255" y1="150" x2="255" y2="270" stroke-dasharray="3 3" opacity=".6"/>
+            </g>
+            <text x="150" y="140" text-anchor="middle" class="sw-odia__t">내경 ID</text>
+            <text x="150" y="288" text-anchor="middle" class="sw-odia__t">외경 OD</text>
+            <g transform="translate(330 150)">
+              <circle r="30" fill="var(--sw-ink)"/>
+              <g color="var(--sw-brand)" stroke="currentColor" stroke-width="1.5"><line x1="-30" y1="46" x2="30" y2="46" marker-start="url(#swa)" marker-end="url(#swa)"/></g>
+              <text y="72" text-anchor="middle" class="sw-odia__t">선경 C/S</text>
+              <text y="-44" text-anchor="middle" class="sw-odia__s">단면</text>
+            </g>
+          </svg>
+          <figcaption>규격표의 외경·내경·선경이 가리키는 치수입니다.</figcaption>
+        </figure>
         <dl class="sw-spec">
           <div><dt>규격</dt><dd>AS568 · P · G · S · V</dd></div>
           <div><dt>비규격</dt><dd>도면·샘플 기준 주문 제작</dd></div>

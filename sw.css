@@ -1028,3 +1028,26 @@ body .sw .sw-close h2 { font-size: clamp(22px, 17px + 1vw, 30px); font-weight: 8
   .sw-anim .sw [data-rv] { opacity: 1; transform: none; }
   .sw-anim .sw-intro * { animation: none !important; }
 }
+
+/* 메인 · 직접 생산 규격품 (10/28, 사진 없이 숫자 카드) */
+.sw-main .sw-std__sub { color: var(--sw-ink-2); margin-top: 10px; font-size: 16px; max-width: 40em; }
+.sw-main .sw-std__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sw-gap); margin-top: 28px; padding: 0; }
+.sw-main .sw-std__grid > li { display: flex; flex-direction: column; min-width: 0; background: #fff; border-radius: var(--sw-r-l); overflow: hidden; transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s; }
+.sw-main .sw-std__grid > li > a:first-child { display: flex; flex-direction: column; flex: 1; padding: 26px 26px 22px; color: inherit; }
+.sw-main .sw-std__grid small { font-size: 14px; font-weight: 700; color: var(--sw-brand-ink); }
+.sw-main .sw-std__num { display: flex; align-items: baseline; gap: 8px; margin-top: 14px; font-size: clamp(40px, 28px + 2.4vw, 60px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--sw-ink); }
+.sw-main .sw-std__num span { font-size: 15px; font-weight: 600; letter-spacing: 0; color: var(--sw-ink-3); }
+.sw-main .sw-std__grid p { margin-top: 16px; font-size: 15px; color: var(--sw-ink-2); flex: 1; }
+.sw-main .sw-std__go, .sw-main .sw-std__alt { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: 15px; font-weight: 700; color: var(--sw-ink); }
+.sw-main .sw-std__go svg, .sw-main .sw-std__alt svg { width: 15px; height: 15px; transition: transform .2s; }
+.sw-main .sw-std__alt { margin: 0; padding: 14px 26px; border-top: 1px solid var(--sw-line); }
+.sw-main .sw-std__alt:hover, .sw-main .sw-std__grid a:hover .sw-std__go { color: var(--sw-brand-ink); }
+.sw-main .sw-std__grid a:hover svg { transform: translateX(3px); }
+@media (hover: hover) { .sw-main .sw-std__grid > li:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(15,20,30,.10); } }
+@media (max-width: 760px) { .sw-main .sw-std__grid { grid-template-columns: 1fr; } }
+/* 오링 안내 · 치수 그림 (10/28, 사진 대체) */
+.sw-oi .sw-odia { margin: 0; background: var(--sw-tint); border-radius: var(--sw-r-m); padding: 20px 20px 14px; }
+.sw-oi .sw-odia svg { display: block; width: 100%; height: auto; color: var(--sw-ink); }
+.sw-oi .sw-odia__t { font-size: 15px; font-weight: 700; fill: var(--sw-ink); font-family: var(--sw-font); }
+.sw-oi .sw-odia__s { font-size: 13px; fill: var(--sw-ink-3); font-family: var(--sw-font); }
+.sw-oi .sw-odia figcaption { font-size: 13px; color: var(--sw-ink-3); margin-top: 6px; text-align: center; }

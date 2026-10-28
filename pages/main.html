@@ -1,5 +1,5 @@
 <!-- 선우특수소재 · 메인 (/) — 아임웹 코드 위젯에 전체 붙여넣기. 디자인은 공통 head 코드(sw.css)에서 불러옴. 방문자 화면은 sw.js가 최신본으로 자동 교체 -->
-<div data-page="main" data-v="ab07c4e805" class="sw sw-pg sw-main">
+<div data-page="main" data-v="806aa095e8" class="sw sw-pg sw-main">
 
   <style>/* sw.css 캐시 대비 히어로 스타일 (sw.css와 동일) */
 .sw-main .sw-mhero--a { padding: 0; }
@@ -39,7 +39,23 @@
   .sw-main .sw-floor__grid .sw-floor__wide { grid-column: 1 / -1; }
   .sw-main .sw-floor__grid li { height: 200px; }
   .sw-main .sw-floor__grid li:nth-child(4) { display: none; }
-}</style>
+}
+/* 메인 · 직접 생산 규격품 (10/28, 사진 없이 숫자 카드) */
+.sw-main .sw-std__sub { color: var(--sw-ink-2); margin-top: 10px; font-size: 16px; max-width: 40em; }
+.sw-main .sw-std__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sw-gap); margin-top: 28px; padding: 0; }
+.sw-main .sw-std__grid > li { display: flex; flex-direction: column; min-width: 0; background: #fff; border-radius: var(--sw-r-l); overflow: hidden; transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s; }
+.sw-main .sw-std__grid > li > a:first-child { display: flex; flex-direction: column; flex: 1; padding: 26px 26px 22px; color: inherit; }
+.sw-main .sw-std__grid small { font-size: 14px; font-weight: 700; color: var(--sw-brand-ink); }
+.sw-main .sw-std__num { display: flex; align-items: baseline; gap: 8px; margin-top: 14px; font-size: clamp(40px, 28px + 2.4vw, 60px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--sw-ink); }
+.sw-main .sw-std__num span { font-size: 15px; font-weight: 600; letter-spacing: 0; color: var(--sw-ink-3); }
+.sw-main .sw-std__grid p { margin-top: 16px; font-size: 15px; color: var(--sw-ink-2); flex: 1; }
+.sw-main .sw-std__go, .sw-main .sw-std__alt { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: 15px; font-weight: 700; color: var(--sw-ink); }
+.sw-main .sw-std__go svg, .sw-main .sw-std__alt svg { width: 15px; height: 15px; transition: transform .2s; }
+.sw-main .sw-std__alt { margin: 0; padding: 14px 26px; border-top: 1px solid var(--sw-line); }
+.sw-main .sw-std__alt:hover, .sw-main .sw-std__grid a:hover .sw-std__go { color: var(--sw-brand-ink); }
+.sw-main .sw-std__grid a:hover svg { transform: translateX(3px); }
+@media (hover: hover) { .sw-main .sw-std__grid > li:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(15,20,30,.10); } }
+@media (max-width: 760px) { .sw-main .sw-std__grid { grid-template-columns: 1fr; } }</style>
   <section class="sw-mhero sw-mhero--a">
     <div class="sw-ha">
       <img class="sw-ha__bg" src="https://drawdream89-oss.github.io/sunwoo-web/img/main-hero.jpg" alt="생활용 실리콘 제품부터 위생 호스·가스켓, 산업용 고무 부품까지 선우특수소재가 만드는 제품" width="1672" height="941">
@@ -83,10 +99,33 @@
           <p>고무판·고무봉, 플라스틱 판재·봉재와 가공품</p>
         </a>
       </div>
-      <p class="sw-specs" style="background:var(--sw-tint)"><b>품번으로 찾으시나요?</b>
-        <a href="https://www.sunwoosm.com/71" style="background:#fff">AS568 오링 규격표</a>
-        <a href="https://www.sunwoosm.com/72" style="background:#fff">P·G·S·V 오링 규격표</a>
-      </p>
+    </div>
+  </section>
+
+  <section class="sw-band sw-band--tint sw-std">
+    <div class="sw-inner">
+      <h2 class="sw-h2">직접 생산해 바로 공급하는 규격품</h2>
+      <p class="sw-std__sub">규격 오링과 시트, 규격 패킹은 선우특수소재가 직접 양산해 판매합니다. 품번이나 치수만 알려 주세요.</p>
+      <ul class="sw-std__grid">
+        <li><a href="https://www.sunwoosm.com/71">
+          <small>규격 오링</small>
+          <b class="sw-std__num">599<span>개 규격</span></b>
+          <p>AS568 349개 · P·G·S·V 250개. 품번이나 내경·선경으로 바로 찾을 수 있습니다.</p>
+          <span class="sw-std__go">AS568 규격표 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        </a><a class="sw-std__alt" href="https://www.sunwoosm.com/72">P·G·S·V 규격표 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+        <li><a href="https://www.sunwoosm.com/36">
+          <small>시트</small>
+          <b class="sw-std__num">재단<span>두께·크기 맞춤</span></b>
+          <p>실리콘·EPDM·NBR 등 고무 시트를 필요한 크기로 재단하고, 양면테이프 부착까지 가공합니다.</p>
+          <span class="sw-std__go">자재 보기 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        </a></li>
+        <li><a href="https://www.sunwoosm.com/34#sw-oring">
+          <small>규격 패킹</small>
+          <b class="sw-std__num">표준<span>치수 양산품</span></b>
+          <p>자주 쓰는 표준 치수의 패킹을 자체 생산해 공급합니다. 규격에 없는 치수는 도면·샘플로 제작합니다.</p>
+          <span class="sw-std__go">오링·가스켓·패킹 <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        </a></li>
+      </ul>
     </div>
   </section>
 

@@ -240,7 +240,7 @@
   var SEL = [
     '.sw-h2', '.sw-band .sw-lead', '.sw-cat', '.sw-product', '.sw-ind', '.sw-eq li', '.sw-floor__grid li', '.sw-floor__head > *',
     '.sw-svc > li', '.sw-steps > li', '.sw-proofs > li', '.sw-ways > li', '.sw-mats > li', '.sw-flow-wrap > .sw-photo',
-    '.sw-table', '.sw-fold', '.sw-close__in', '.sw-silicell', '.sw-cols > div', '.sw-note', '.sw-flec', '.sw-cards > *'
+    '.sw-table', '.sw-fold', '.sw-close__in', '.sw-silicell', '.sw-cols > div', '.sw-note', '.sw-flec', '.sw-cards > *', '.sw-std__grid > li', '.sw-std__sub'
   ].join(',');
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
